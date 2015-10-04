@@ -1,11 +1,16 @@
-<h2>How do you feel right now?</h2>
-<div>
-  {{score-radio-button score="-2" selected=model.score}}
-  {{score-radio-button score="-1" selected=model.score}}
-  {{score-radio-button score="0" selected=model.score}}
-  {{score-radio-button score="+1" selected=model.score}}
-  {{score-radio-button score="+2" selected=model.score}}
-</div>
-<div class="text">
-  <h3>I feel {{model.score}} right now, and {{model.score}} today.</h3>
-</div>
+  <form {{action "save" on="submit"}}>
+  <h2>How do you feel right now?</h2>
+  <div>
+    {{score-radio-button score="-2" selected=model.score}}
+    {{score-radio-button score="-1" selected=model.score}}
+    {{score-radio-button score="0" selected=model.score}}
+    {{score-radio-button score="+1" selected=model.score}}
+    {{score-radio-button score="+2" selected=model.score}}
+  </div>
+  <div>
+    {{input type="submit" value="save"}}
+  </div>
+  <div class="text">
+    <h3>I feel {{model.score}} right now, and {{model.score}} today.</h3>
+  </div>
+</form>

@@ -12,3 +12,6 @@ window.Sampler = Ember.Application.create()
 window.Sampler.ApplicationRoute = Ember.Route.extend
   model: ->
     return {score: "0"}
+  actions:
+    save: ->
+      $.post "http://localhost:3000/samples?score=#{this.currentModel.score}"

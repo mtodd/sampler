@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post "/samples" => "samples#create"
+
   root :to => 'assets#index'
   get 'assets/index'
 
