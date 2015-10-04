@@ -14,7 +14,29 @@
  *= require_self
  */
 
-.radio-buttons label {}
+.radio-buttons {
+  margin: 50px 0;
+
+  div {
+    display: inline-block;
+  }
+
+  label {
+    padding: 30px;
+
+    background-color: #ccc;
+    color: #000;
+    font-size: 24pt;
+
+    &.is-checked {
+      background-color: #aaa;
+    }
+
+    input {
+      display: none;
+    }
+  }
+}
 
 .submit-button input {}
 
