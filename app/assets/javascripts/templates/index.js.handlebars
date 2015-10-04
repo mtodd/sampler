@@ -1,7 +1,11 @@
-<div style="width: 600px; border: 6px solid #eee; margin: 0 auto; padding: 20px; text-align: center; font-family: sans-serif;">
-  <img src="http://emberjs.com/images/about/ember-productivity-sm.png" style="display: block; margin: 0 auto;">
-  <h1>Welcome to Ember.js!</h1>
-  <p>You're running an Ember.js app on top of Ruby on Rails. To get started, replace this content
-  (inside <code>app/assets/javascripts/templates/index.js.handlebars</code>) with your application's
-  HTML.</p>
+<h2>How do you feel right now?</h2>
+<div>
+  {{score-radio-button score="-2" selected=model.score}}
+  {{score-radio-button score="-1" selected=model.score}}
+  {{score-radio-button score="0" selected=model.score}}
+  {{score-radio-button score="+1" selected=model.score}}
+  {{score-radio-button score="+2" selected=model.score}}
+</div>
+<div class="text">
+  <h3>I feel {{model.score}} right now, and {{model.score}} today.</h3>
 </div>

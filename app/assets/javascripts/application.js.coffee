@@ -9,3 +9,6 @@
 # for more details see: http://emberjs.com/guides/application/
 window.Sampler = Ember.Application.create()
 
+window.Sampler.ApplicationRoute = Ember.Route.extend
+  model: ->
+    return {score: "0"}
