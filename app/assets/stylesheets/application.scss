@@ -14,6 +14,19 @@
  *= require_self
  */
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#scoring-container {
+  margin: 0;
+  padding: 10px;
+  width: 750px;
+  height: 100%;
+  background-color: #eee;
+}
+
 .radio-buttons {
   margin: 50px 0;
 
@@ -38,7 +51,16 @@
   }
 }
 
-.submit-button input {}
+.submit-button input {
+  margin: 10px 50px;
+
+  width: 80%;
+  height: 50px;
+
+  background-color: white;
+  color: #000;
+  font-size: 24pt;
+}
 
 .summary-text {
   color: #777;
