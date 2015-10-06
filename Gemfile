@@ -43,5 +43,5 @@ group :development, :test do
   gem 'spring'
 end
 
-
 gem 'ember-rails', '~> 0.15'
+gem 'rails_12factor'
