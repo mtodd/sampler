@@ -17,5 +17,7 @@ window.Sampler.ApplicationRoute = Ember.Route.extend
   actions:
     save: ->
       $.post "/samples?score=#{this.currentModel.score}&notes=#{this.currentModel.notes}", (data) =>
-        this.set('score', data.score)
+        this.set('sample.notes', "")
+        this.set('sample.score', "0")
         this.set('sample', data)
+        $('.default').prop('checked', true).click()
