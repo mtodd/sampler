@@ -11,7 +11,11 @@ window.Sampler = Ember.Application.create()
 
 window.Sampler.ApplicationRoute = Ember.Route.extend
   model: ->
-    return {score: "0"}
+    return Ember.$.getJSON("/samples.json")
+  afterModel: ->
+    this.set('sample', this.modelFor('application'))
   actions:
     save: ->
-      $.post "http://localhost:3000/samples?score=#{this.currentModel.score}"
+      $.post "http://localhost:3000/samples?score=#{this.currentModel.score}&notes=#{this.currentModel.notes}", (data) =>
+        this.set('score', data.score)
+        this.set('sample', data)
