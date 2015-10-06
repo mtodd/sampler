@@ -1,6 +1,16 @@
 class SamplesController < ApplicationController
+  def index
+    sample = Sample.last
+    respond_to do |format|
+      format.html { render }
+      format.json do
+        render :json => {sample: sample, score: "0"}
+      end
+    end
+  end
+
   def create
-    p [:samples, :create, params[:score].to_i]
-    render :text => "ok"
+    sample = Sample.create! score: params[:score], notes: params[:notes]
+    render :json => sample.to_json
   end
 end
