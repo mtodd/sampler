@@ -16,6 +16,6 @@ window.Sampler.ApplicationRoute = Ember.Route.extend
     this.set('sample', this.modelFor('application'))
   actions:
     save: ->
-      $.post "http://localhost:3000/samples?score=#{this.currentModel.score}&notes=#{this.currentModel.notes}", (data) =>
+      $.post "/samples?score=#{this.currentModel.score}&notes=#{this.currentModel.notes}", (data) =>
         this.set('score', data.score)
         this.set('sample', data)
