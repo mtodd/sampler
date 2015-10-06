@@ -23,4 +23,7 @@ ActiveRecord::Schema.define(version: 20151006061121) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "samples", ["created_at", "score"], name: "index_samples_on_created_at_and_score", using: :btree
+  add_index "samples", ["score"], name: "index_samples_on_score", using: :btree
+
 end
