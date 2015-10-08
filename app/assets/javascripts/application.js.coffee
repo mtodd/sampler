@@ -17,6 +17,12 @@ window.Sampler.ApplicationRoute = Ember.Route.extend
     this.set('sample', this.modelFor('application'))
 
   actions:
+    didTransition: ->
+      Ember.run.scheduleOnce "afterRender", this, ->
+        console.log window.studyToken, $('.study-token')
+        $('.study-token').html(window.studyToken)
+      return true # Bubble the didTransition event
+
     save: ->
       data =
         score: this.currentModel.score
