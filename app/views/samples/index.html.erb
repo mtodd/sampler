@@ -6,9 +6,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= javascript_include_tag "application" %>
   <%= javascript_tag do %>
     window.studyToken = <%= params[:token].to_json.html_safe %>
   <% end %>
+  <%= javascript_include_tag "application" %>
 </body>
 </html>
