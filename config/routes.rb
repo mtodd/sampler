@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   get  "/samples" => 'samples#index', :as => :samples
   post "/samples" => "samples#create"
-  root :to => redirect('/samples')
+
+  get  "/studies" => 'studies#index', :as => :studies
+
+  root :to => redirect('/studies')
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
