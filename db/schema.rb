@@ -11,19 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151006061121) do
+ActiveRecord::Schema.define(version: 20151008042227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "samples", force: :cascade do |t|
-    t.integer  "score",      null: false
+    t.integer  "score",       null: false
     t.text     "notes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "study_token", null: false
   end
 
   add_index "samples", ["created_at", "score"], name: "index_samples_on_created_at_and_score", using: :btree
   add_index "samples", ["score"], name: "index_samples_on_score", using: :btree
+  add_index "samples", ["study_token"], name: "index_samples_on_study_token", using: :btree
 
 end
