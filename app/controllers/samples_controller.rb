@@ -18,7 +18,10 @@ class SamplesController < ApplicationController
   end
 
   def create
-    sample = Sample.create! score: params[:score], notes: params[:notes]
+    sample = Sample.create! \
+      study_token: params[:token],
+      score: params[:score],
+      notes: params[:notes]
     render :json => sample.to_json
   end
 end
