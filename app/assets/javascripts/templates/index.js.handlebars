@@ -1,7 +1,7 @@
 <div id="scoring-container">
   <h1 class="title">Samples</h1>
   <h2 class="prompt">How do you feel right now?</h2>
-  <h3 class="study-token"></h3>
+  <h3>Study: <span class="study-token"></span></h3>
   <form {{action "save" on="submit"}}>
     <div class="radio-buttons">
       {{score-radio-button score="-2" selected=model.score}}
