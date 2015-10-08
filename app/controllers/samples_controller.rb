@@ -1,7 +1,10 @@
 class SamplesController < ApplicationController
+  before_filter :require_token
+
   def index
-    sample = Sample.last
-    samples = Sample.where(created_at: (Time.now.midnight - 1.day)..Time.now.midnight)
+    sample  = Sample.where(study_token: params[:token]).last
+    samples = Sample.where(study_token: params[:token], created_at: (Time.now.midnight - 1.day)..Time.now.midnight)
+
     respond_to do |format|
       format.html { render }
       format.json do
@@ -23,5 +26,11 @@ class SamplesController < ApplicationController
       score: params[:score],
       notes: params[:notes]
     render :json => sample.to_json
+  end
+
+  private
+
+  def require_token
+    redirect_to "/studies" unless params[:token].present?
   end
 end
