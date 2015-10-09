@@ -2,6 +2,10 @@ window.Sampler.SampleFormComponent = Ember.Component.extend({
   didInsertElement: ->
     $('.study-token').html(window.studyToken)
 
+  average: Ember.computed("sample.samples.average", ->
+    @get("sample.samples.average") || 0
+  )
+
   actions:
     save: ->
       data =
