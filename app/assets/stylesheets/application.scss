@@ -22,20 +22,21 @@ body {
 #scoring-container {
   margin: 0;
   padding: 10px;
-  width: 750px;
+  width: 100%;
+  max-width: 370px;
   height: 100%;
   background-color: #eee;
 }
 
 .radio-buttons {
-  margin: 50px 0;
+  margin: 30px 0;
 
   div {
     display: inline-block;
   }
 
   label {
-    padding: 30px;
+    padding: 20px;
 
     background-color: #ccc;
     color: #000;
@@ -53,10 +54,11 @@ body {
 
 .notes-field textarea {
   font-size: 18pt;
+  width: 90%;
 }
 
 .submit-button input {
-  margin: 10px 50px;
+  margin: 10px 20px;
 
   width: 80%;
   height: 50px;
