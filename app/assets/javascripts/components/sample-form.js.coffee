@@ -1,10 +1,9 @@
-window.Sampler.SampleFormComponent = Ember.Component.extend({
-  didInsertElement: ->
-    $('.study-token').html(window.studyToken)
-
-  average: Ember.computed("sample.samples.average", ->
+window.Sampler.SampleFormComponent = Ember.Component.extend
+  average: Ember.computed "sample.samples.average", ->
     @get("sample.samples.average") || 0
-  )
+
+  studyToken: Ember.computed ->
+    window.studyToken
 
   actions:
     save: ->
@@ -23,4 +22,3 @@ window.Sampler.SampleFormComponent = Ember.Component.extend({
 
       ajax.fail =>
         console.log "failure", this, arguments
-})
