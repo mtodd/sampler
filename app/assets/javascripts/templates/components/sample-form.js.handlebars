@@ -1,5 +1,5 @@
 <h2 class="prompt">How do you feel right now?</h2>
-<h3>Study: <span class="study-token"></span></h3>
+<h3>Study: {{studyToken}}</h3>
 <form {{action "save" on="submit"}}>
   <div class="radio-buttons">
     {{score-radio-button score="-2" selected=sample.score}}
